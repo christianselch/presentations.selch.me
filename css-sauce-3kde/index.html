@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js - The HTML Presentation Framework</title>
+    <meta content=
+    "A framework for easily creating beautiful presentations using HTML" name=
+    "description">
+    <meta content="Hakim El Hattab" name="author">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-translucent" name=
+    "apple-mobile-web-app-status-bar-style">
+    <link href="css/reveal.min.css" rel="stylesheet">
+    <link href="css/theme/default.css" id="theme" rel="stylesheet">
+    <!-- For syntax highlighting -->
+    <link href="lib/css/zenburn.css" rel="stylesheet">
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+
+    <script>
+        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script><!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+
+        <div class="slides">
+            <section>
+                <section>
+                    <h1>Magisk CSS-sauce til din HTML</h1>
+
+                    <p>Når en hvid baggrund med sort tekst og blå links ikke er
+                    nok til at tilfredsstille din indre designer</p>
+
+                    <p><br></p>
+
+                    <p><br></p>
+
+                    <p>En præsentation af Christian Selch for 3. KDE</p>
+                </section>
+
+                <section>
+                    <h2>Vores HTML</h2>
+
+                    <div>
+                        Index.html:
+                    </div>
+
+                    <div>
+                        <pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;CSS Sauce til vores HTML&lt;/title&gt;
+        &lt;link rel="stylesheet" href="style.css" /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;h1&gt;Overskrift goes here&lt;/h1&gt;
+            &lt;p&gt;En stump tekst&lt;/p&gt;
+            &lt;p&gt;Endnu en stump tekst&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Hvad en selector?</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div>
+                        En selector...
+                    </div>
+
+                    <ul style="list-style: none; text-align: center">
+                        <li class="fragment">... bestemmer hvad vi
+                        taler om</li>
+
+                        <li class="fragment">... kobler HTML og CSS
+                        sammen</li>
+
+                        <li class="fragment">... en selector
+                        <em>selecter</em> ting</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hvilke selectors findes der?</h2>
+
+                    <div class="fragment">
+                        En tag-selector&nbsp; (<code>tagname</code>)
+                    </div>
+
+                    <div class="fragment">
+                        En class-selector&nbsp; (<code>.className</code>)
+                    </div>
+
+                    <div class="fragment">
+                        En id-selector&nbsp; (#id)
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>At vælge en selector</h2>
+
+                    <div>
+                        <span style="letter-spacing: -0.02em;">Hvorfor ikke
+                        altid bruge tag-selectors?</span><br>
+                    </div>
+
+                    <div>
+                        <div class="fragment" style=
+                        "font-family: Lato, Times, 'Times New Roman', serif; font-size: 36px; font-style: normal; font-variant: normal; line-height: 43.1875px;">
+                        <span style=
+                        "font-family: Lato, Times, 'Times New Roman', serif; font-size: 36px; font-style: normal; font-variant: normal; line-height: 43.1875px;">
+                            Hvornår skal vi bruge IDs?</span><br>
+                        </div>
+
+                        <div class="fragment" style=
+                        "font-family: Lato, Times, 'Times New Roman', serif; font-size: 36px; font-style: normal; font-variant: normal; line-height: 43.1875px;">
+                        <span style=
+                        "font-family: Lato, Times, 'Times New Roman', serif; font-size: 36px; font-style: normal; font-variant: normal; line-height: 43.1875px;">
+                            Hvornår skal vi bruge classes?</span><br>
+                        </div>
+                    </div>
+
+                    <div>
+                        <br>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Tag-selectoren</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <ul style="list-style: none; text-align: center">
+                        <li class="fragment">Rammer alle af den slags
+                        elementer</li>
+
+                        <li class="fragment"><span style=
+                        "text-align: left; letter-spacing: -0.02em;">Laveste
+                        prioritet af alle selectors</span><br></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Class-selectoren</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <ul style="list-style: none; text-align: center">
+                        <li class="fragment">Kan bruges på uendeligt
+                        mange elementer</li>
+
+                        <li class="fragment">Sammen class, kan bruges
+                        på flere forskellige tags</li>
+
+                        <li class="fragment">Har højere prioritet end
+                        tag-selectoren</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>ID-selectoren</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <ul style="list-style: none; text-align: center">
+                        <li class="fragment">Skal være unik - må kun
+                        optræde en gang på siden</li>
+
+                        <li class="fragment">Højeste prioritet - tager
+                        prioritet over de to andre</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Pseudo-selectors</h2>
+
+                    <div>
+                        <ul style="list-style: none; text-align: center">
+                            <li class="fragment"><code class= 
+                            "css">:visited</code> - besøgte links</li>
+
+                            <li class="fragment"><code class=
+                            "css">:link</code> - ikke-besøgte links</li>
+
+                            <li class="fragment"><code class=
+                            "css">:hover</code> - når musen holdes over
+                            elementet</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>CSS-syntaxen - Generelle regler</h2><br>
+
+                    <div>
+                        <ul style="list-style: none; text-align: center">
+                            <li class="fragment">Alle blokke skal åbnes
+                            og lukkes med <code>{</code> og <code>}</code></li>
+
+                            <li class="fragment">Farver opgives i RGB
+                            eller HEX (<code>##11CCFF</code>)</li>
+
+                            <li class="fragment">ALTING ER
+                            CASE-SENSATIVE</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CSS-syntaxen - selectoren</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div>
+                        <pre><code class="html">
+<span class="fragment">p { }</span>
+<span class="fragment">.class { }</span>
+<span class="fragment">#id { }</span>
+ </code></pre><br>
+
+                        <div class="fragment">
+                            Protip: CSS og HTML tage ikke hensyn til mellemrum
+                            og afsnit, så længe de ikke står inden i et tag
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CSS-synaxen - properties</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div>
+                        <pre><code class="html">div {
+    <span class="fragment">background-color: hotpink;</span>
+    <span class=
+"fragment">background-image: url("adresse") (repeat|no-repeat|repeat-x|repeat-y); </span>
+    
+    <span class="fragment">text-align: center; </span>
+    
+    <span class="fragment">margin: 0 auto;</span> <span class=
+"fragment">/** ...med display block &amp; width **/</span>
+    
+    <span class="fragment">color: red;</span>
+    <span class="fragment">font-size: 32px;</span>
+    <span class="fragment">font-weight: bold; </span>
+    <span class="fragment">font-style: italic; </span>
+    <span class="fragment">text-decoration: underline; </span>
+}</code></pre>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <h2>Sidste råd inden opgavetid</h2>
+
+                <div>
+                    <br>
+                </div>
+
+                <div>
+                    Brug for hjælp til HTML-tags og deres formål?
+                </div>
+
+                <div>
+                    <a href=
+                    "http://html5doctor.com/">HTML5doctor.com</a>&nbsp;eller&nbsp;<a href="http://dochub.io/#html"
+                    style=
+                    "line-height: 1.2em; letter-spacing: -0.02em;">http://dochub.io/#html</a>
+                </div>
+
+                <div>
+                    <br>
+                </div>
+
+                <div>
+                    Brug for hjælp til CSS properties og deres funktion?
+                </div>
+
+                <div>
+                    <a href=
+                    "http://dochub.io/#css/">http://dochub.io/#css/</a><br>
+                </div>
+
+                <div>
+                    <br>
+                </div>
+
+                <div>
+                    <br>
+                </div>
+
+                <div class="fragment">
+                    <blockquote>
+                        Luke, view the souce
+                    </blockquote><span style=
+                    "text-align:right; display: block; width: 95%;">- Paul
+                    Irish</span>
+                </div>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Opgave 1</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div>
+                        Du skal lave den første tekstblok indholdende teksten
+                        "En stump tekst" rød.
+                    </div>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div>
+                        Hvordan vil du skrive CSS-selectoren?
+                    </div>
+
+                    <div>
+                        Ville du ændre noget i HTMLen?
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Løsning 1 (Simpel)</h2>
+
+                    <div>
+                        <h2>HTML:</h2>
+                        <pre><code class=
+"html">&lt;p&gt;En stump tekst&lt;/p&gt;</code>
+                                
+</pre>til
+                        <pre>
+                                <code class=
+"html">&lt;p class="redText"&gt;En stump tekst&lt;/p&gt;
+</code></pre>
+
+                        <h2>CSS:</h2>
+                        <pre><code class="css">.redText{
+    color: red;
+}</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Løsning 2 (Advanceret)</h2><br>
+
+                    <div>
+                        <pre><code class="css">div:first-child p{
+    color: red;
+}        </code></pre>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Opgave 2</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div>
+                        Lav overskriften understeget og skift farven til f.eks.
+                        <code>#bada55</code>
+                    </div>
+
+                    <div>
+                        <div>
+                            <br>
+                        </div>
+
+                        <div>
+                            Hvordan vil du skrive CSS-selectoren?
+                        </div>
+
+                        <div>
+                            Ville du ændre noget i HTMLen?
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Løsning 1 (Simpel)</h2>
+
+                    <div>
+                        <h2>HTML:</h2>
+                        <pre><code class=
+"html">&lt;h1&gt;Overskrift goes here&lt;/h1&gt;</code></pre
+		½				>til
+                        <pre><code class=
+"html">&lt;h1 id="overskrift"&gt;Overskrift goes here&lt;/h1&gt;
+</code></pre>
+
+                        <h2>CSS:</h2>
+                        <pre><code class="css">#overskrift{
+    color: #bada55;
+    text-decoration: underline;
+}</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Løsning 2 (Advanceret)</h2><br>
+
+                    <div>
+                        <pre><code class="css">div:first-child h1{
+    color: #bada55;
+    text-decoration: underline;
+}</code></pre>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>To kasser ved siden af hinanden</h2>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div>
+                        Live Demo
+                    </div><br>
+
+                    <div style=
+                    "width: 410px; height: 100px; background-color: blue;">
+                    </div>
+
+                    <div style=
+                    "width: 410px; height: 100px; background-color: red;">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Float clearfix</h2><br>
+
+                    <div>
+                        <pre><code class="css">
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+<br></code></pre>
+                    </div><br>
+
+                    <div class="fragment">
+                        <blockquote>
+                            Husk at bruge det her, på hvert element efter du
+                            har brugt en omgang <span style=
+                            "font-weight: bold">float</span>.
+                        </blockquote>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <h2>Opsummering</h2>
+
+                <div>
+                    <br>
+                </div>
+
+                <div>
+                    <span class="fragment">HTML-tag spørgsmål kan der
+                    findes svar på ved at besøge <a href=
+                    "http://HTML5doctor.com">HTML5doctor.com</a> eller <a href=
+                    "http://dochub.io/#html" rel=
+                    "noreferrer">dochub.io/#html</a>.</span> <span class=
+                    "fragment">Hvis det derimod handler om CSS kan
+                    svaret med stor sandsynlighed findes på <a href=
+                    "http://dochub.io/#css/" rel=
+                    "noreferrer">dochub.io/#css/</a>.</span><br>
+                    <br>
+                    <span class="fragment">Hvis alt andet glipper;
+                    spørg <a href="http://google.dk">Google</a>!</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Til sidst</h2><br>
+                <br>
+                <br>
+
+                <div class="visible">
+                    <blockquote>
+                        Luke, view the souce
+                    </blockquote><span style=
+                    "text-align:right; display: block; width: 95%;">- Paul
+                    Irish</span>
+                </div>
+            </section>
+        </div><script src="lib/js/head.min.js"></script> <script src="js/reveal.min.js"></script> <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+    </div>
+</body>
+</html>
